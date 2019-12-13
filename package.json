@@ -1,0 +1,20 @@
+{
+  "name": "arduinoleapmotion",
+  "version": "1.0.0",
+  "description": "arduino test project for leapmotion and braccio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "arduino",
+    "leapmotion",
+    "braccio"
+  ],
+  "author": "yuan.li",
+  "license": "ISC",
+  "dependencies": {
+    "leapjs": "^0.6.4",
+    "serialport": "^8.0.5"
+  }
+}
