@@ -21,7 +21,7 @@ let handSphereCenter = []
 let indexFingerDirection = []
 let thumbDirection = []
 
-setInterval(() => {
+function sendData () {
   if (palmNormal.length !== 0) {
     M1 = parseInt(handDirection[0] * 90 + 90)
 
@@ -40,10 +40,14 @@ setInterval(() => {
     M6 = M6 < 10 ? 10 : M6 > 73 ? 73 : M6
 
     const sendData = [255, M1, M2, M3, M4, M5, M6]
-    console.log(sendData)
+    console.log(`M1: ${M1}, M2: ${M2}, M3: ${M3}, M4: ${M4}, M5: ${M5}, M6: ${M6}`)
     port.write(sendData)
   }
-}, 100)
+}
+
+setInterval(() => {
+  sendData()
+}, 50)
 
 let data = {}
 Leap.loop(function (frame) {
